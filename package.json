@@ -1,0 +1,15 @@
+{
+  "name": "instawedding",
+  "version": "0.0.1",
+  "description": "A simple server using socket.io to push instagram data to a client.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arvin Singla",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.6",
+    "socket.io": "^1.2.1"
+  }
+}

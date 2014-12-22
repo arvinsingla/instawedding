@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="css/flexslider.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+  <body>
+
+    <header>
+      <h1 class="left">Caroline Habib <span class="red">&</span> Arvin Singla</h1>
+      <h2 class="right">Tag your Instagram photos <span class="gold upper">#singlahabib</span></h2>
+    </header>
+
+    <!-- Current single image -->
+    <div class="current left">
+      <div class="gradient"></div>
+      <img class="instagram-image" src="//scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/10852763_751521348268835_1842216785_n.jpg">
+      <div class="user">
+        <img src="https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/10843740_1505236406405641_1563464015_a.jpg">
+        <div class="user-text">
+          <h4>alicelcmt</h4>
+          <div class="caption">8h du mat, heure parfaite pour une pizza.#morning #france #girl #pizza #food #foodporn</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic flex slider -->
+    <div class="flexslider right">
+      <ul id="instafeed" class="slides"></ul>
+    </div>
+
+    <h2 class="left bottom-title">Most Recent Photo</h2>
+    
+    <h2 class="right bottom-title">Previous Photos</h2>
+
+    <!-- Javascript -->
+    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/instafeed.js/instafeed.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/client.js"></script>
+    <!-- /Javascript -->
+  </body>
+</html>

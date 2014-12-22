@@ -1,0 +1,190 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'a_day_without_sunregular';
+  src: url('fonts/a_day_without_sun.eot');
+  src: url('fonts/a_day_without_sun.eot?#iefix') format('embedded-opentype'),
+  url('fonts/a_day_without_sun.woff2') format('woff2'),
+  url('fonts/a_day_without_sun.woff') format('woff'),
+  url('fonts/a_day_without_sun.ttf') format('truetype'),
+  url('fonts/a_day_without_sun.svg#a_day_without_sunregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.red { color: #99383f; }
+.gold { color: #ebcea6; }
+.charcoal { color: #333333; }
+
+/**
+$white: #FFFFFF; // White (content over imagery)
+$light-light-grey: #f3f3f3;
+$light-grey: #CCCCCC;
+$grey: #666666; // Grey (body copy)
+$charcoal: #333333; // Charcoal (inactive nav item, timeline)
+$mint: #a9c8b6; // Mint green (H2, Tertiary button, active nav item, image overlay)
+$green: #96b3a2;
+$red: #99383f;
+$cherry: #DE9E92; // Cherry Pastel (Primary button, secondary button text, sub headers)
+$gold: #fdf0df; //Light Gold (H2 over imagery)
+$gold-dark: #ebcea6;
+
+*/
+
+body {
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: block;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.bottom-title {
+  margin-top: 15px;
+}
+
+.bottom-title.left {
+  clear: left;
+}
+
+h1 {
+  font-family: a_day_without_sunregular;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: a_day_without_sunregular;
+  font-size: 48px;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.flexslider,
+.current {
+  margin: 0;
+  width: 48%;
+}
+
+.current,
+.flexslider li {
+  position: relative;
+}
+
+.current {
+  border: 4px solid #fff;
+  border-radius: 4px;
+}
+
+.current img.instagram-image {
+  width: 100%;
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5))
+}
+
+.user {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  height: 90px;
+}
+
+.user img {
+  width: 60px !important;
+  height: 60px;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 60px;
+}
+
+.user h4 {
+  font-size: 20px;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+
+.user-text {
+  margin-left: 80px;
+}
+
+.user-text .username {
+  font-si
+}
