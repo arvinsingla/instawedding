@@ -5,7 +5,7 @@
 
 var $slider;
 var $current;
-var socket = io('http://localhost');
+var socket = io('http://216.119.154.185');
 
 function toggleFullScreen() {
   if (!document.fullscreenElement &&    // alternative standard method

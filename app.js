@@ -12,10 +12,10 @@ var handlebars = require('handlebars');
 
 // Every call to `ig.use()` overrides the `client_id/client_secret`
 // or `access_token` previously entered if they exist.
-ig.use({ client_id: '67a9d920bffb437c931859e765c422ee',
-client_secret: 'ba80556943ef4c159d5ef1be8fa06e59' });
+ig.use({ client_id: '', client_secret: '' });
 
-// Initialize needed variables
+// Initialize needed variables.
+var hashTag = 'singlahabibtest';
 var igMinId;
 var source = "<div class='gradient'></div><img class='instagram-image' src='{{this.images.standard_resolution.url}}'><div class='user'><img src='{{this.user.profile_picture}}'><div class='user-text'><h4>{{this.user.full_name}}</h4><div class='caption'>{{this.caption.text}}</div></div>";
 var template = handlebars.compile(source);
@@ -41,7 +41,7 @@ app.get('/instagram', function (req, res) {
 
 // Socket.io connection.
 io.on('connection', function (socket) {
-  ig.tag_media_recent('pizza', function(err, medias, pagination, remaining, limit) {
+  ig.tag_media_recent(hashTag, function(err, medias, pagination, remaining, limit) {
     var posts = [];
     if (err === null) {
       medias.forEach(function(post) {
@@ -58,7 +58,7 @@ app.post('/instagram', function (req, res) {
   // Only execute updates if we have a minId.
   if (typeof(igMinId) !== 'undefined') {
     console.log('New Post from Instagram. MinID = ' + igMinId);
-    ig.tag_media_recent('pizza', { min_tag_id: igMinId }, function(err, medias, pagination, remaining, limit) {
+    ig.tag_media_recent(hashTag, { min_tag_id: igMinId }, function(err, medias, pagination, remaining, limit) {
       var posts = [];
       if (err === null) {
         medias.forEach(function(post) {
