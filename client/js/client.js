@@ -3,33 +3,59 @@
  * Front end client for instawedding.
  */
 
-/*
+var $slider;
+var $current;
 var socket = io('http://localhost');
-socket.on('news', function (data) {
-  console.log(data);
-  socket.emit('my other event', { my: 'data' });
-});
-*/
 
-
-var feed = new Instafeed({
-  get: 'tagged',
-  tagName: 'pizza',
-  clientId: '67a9d920bffb437c931859e765c422ee',
-  sortBy: 'most-recent',
-  resolution: 'standard_resolution',
-  template: '<li><div class="gradient"></div><img class="instagram-image" src="{{image}}" /><div class="user"><img src="{{model.user.profile_picture}}"><div class="user-text"><h4>{{model.user.username}}</h4><div class="caption">{{caption}}</div></div></div></li>',
-  after: function(e) {
-    // Initialize the flexslider with our instagram photos.
-    jQuery('.flexslider').flexslider({
-      animation: "slide",
-      slideshow: true,
-      useCSS: false,
-      controlNav: false,
-      directionNav: false
-    });
+function toggleFullScreen() {
+  if (!document.fullscreenElement &&    // alternative standard method
+    !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
   }
-});
 
-// Initialize the Instagram feed fetcher.
-feed.run();
+(function($) {
+
+  $current = $('.current');
+
+  socket.on('newPosts', function (data) {
+    var posts = '';
+    if (typeof($slider) !== 'undefined') {
+      data.data.forEach(function(post) {
+        $slider.addSlide('<li>' + post + '</li>');
+      });
+
+    } else {
+      data.data.forEach(function(post) {
+        posts += '<li>' + post + '</li>';
+      });
+      $('.flexslider ul').append(posts);
+      // Initialize the flex slider.
+      $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        useCSS: false
+      });
+      $slider = $('.flexslider').data('flexslider');
+    }
+    $current.html(data.data[0]);
+  });
+})(jQuery)

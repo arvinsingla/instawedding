@@ -90,12 +90,18 @@ body {
   padding: 20px;
 }
 
+.container {
+  margin: 0 auto;
+  min-height: 100%; /* Set to minimum height so overflow doesn't get hidden */
+  overflow-y: hidden; /* HIDE overflow; I know, it doesn't make much sense */
+  position: relative;
+}
+
 header {
   width: 100%;
   height: 100px;
   display: block;
   padding: 20px;
-  margin-bottom: 15px;
 }
 
 .left {
@@ -133,6 +139,7 @@ h2 {
 .current {
   margin: 0;
   width: 48%;
+  overflow: hidden;
 }
 
 .current,
@@ -187,4 +194,10 @@ h2 {
 
 .user-text .username {
   font-si
+}
+
+footer {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
 }

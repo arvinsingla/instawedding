@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.10.6",
+    "handlebars": "^2.0.0",
+    "instagram-node": "^0.5.4",
     "socket.io": "^1.2.1"
   }
 }
