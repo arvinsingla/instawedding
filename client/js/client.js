@@ -52,7 +52,11 @@ function toggleFullScreen() {
       $('.flexslider').flexslider({
         animation: "slide",
         slideshow: true,
-        useCSS: false
+        useCSS: false,
+        initDelay: 0,
+        allowOneSlide: true,
+        slideshowSpeed: 5000,
+        controlNav: false
       });
       $slider = $('.flexslider').data('flexslider');
     }

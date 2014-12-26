@@ -124,6 +124,7 @@ h1 {
   font-family: a_day_without_sunregular;
   font-size: 60px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 h2 {
