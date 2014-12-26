@@ -58,4 +58,9 @@ function toggleFullScreen() {
     }
     $current.html(data.data[0]);
   });
+
+  // Allow user to enter fullscreen mode.
+  $(".title").on('click', function() {
+    toggleFullScreen();
+  })
 })(jQuery)
