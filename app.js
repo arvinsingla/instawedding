@@ -12,14 +12,15 @@ var handlebars = require('handlebars');
 var fs = require('fs');
 
 // Initialize needed variables.
-var hashTag = 'singlahabibtest';
+var hashtag;
 var igMinId;
 var source = "<div class='gradient'></div><img class='instagram-image' src='{{this.images.standard_resolution.url}}'><div class='user'><img src='{{this.user.profile_picture}}'><div class='user-text'><h4>{{this.user.full_name}}</h4><div class='caption'>{{this.caption.text}}</div></div>";
 var template = handlebars.compile(source);
 
 // Initialize instagram settings
 var igSettings = JSON.parse(fs.readFileSync('igSettings.json', 'utf8'));
-ig.use(igSettings);
+ig.use(igSettings.settings);
+hashtag = igSettings.tag
 
 // Tell the express server to listen on port 80
 server.listen(80);
@@ -43,7 +44,7 @@ app.get('/instagram', function (req, res) {
 // Socket.io connection.
 io.on('connection', function (socket) {
   console.log('New client connected.');
-  ig.tag_media_recent(hashTag, function(err, medias, pagination, remaining, limit) {
+  ig.tag_media_recent(hashtag, function(err, medias, pagination, remaining, limit) {
     updateClient(err, medias);
   });
 });
@@ -53,7 +54,7 @@ app.post('/instagram', function (req, res) {
   console.log('New response from Instragram.')
   // Only execute updates if we have a minId.
   if (typeof(igMinId) !== 'undefined') {
-    ig.tag_media_recent(hashTag, { min_tag_id: igMinId }, function(err, medias, pagination, remaining, limit) {
+    ig.tag_media_recent(hashtag, { min_tag_id: igMinId }, function(err, medias, pagination, remaining, limit) {
       updateClient(err, medias);
     });
   }
