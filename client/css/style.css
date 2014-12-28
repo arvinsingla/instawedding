@@ -88,6 +88,7 @@ body {
   background-color: #444;
   color: #fff;
   padding: 20px;
+  font-family: helvetica;
 }
 
 .container {
@@ -122,14 +123,14 @@ header {
 
 h1 {
   font-family: a_day_without_sunregular;
-  font-size: 60px;
+  font-size: 70px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 h2 {
   font-family: a_day_without_sunregular;
-  font-size: 48px;
+  font-size: 60px;
 }
 
 .upper {
@@ -139,7 +140,7 @@ h2 {
 .flexslider,
 .current {
   margin: 0;
-  width: 48%;
+  width: 45%;
   overflow: hidden;
 }
 
@@ -199,6 +200,6 @@ h2 {
 
 footer {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 50px;
   font-size: 14px;
 }
